@@ -54,7 +54,7 @@ const projects = [
     image: "/project3.jpg",
     tags: ["MongoDB", "Express.js", "React.js", "Node.js", "MERN Stack"],
     github: "https://github.com/hameed2k3/grocery-app",
-    demo: "https://grocery-app.example.com",
+    demo: "https://grocery-web-naanmuthalvan.vercel.app/",
     color: "from-orange-400 to-pink-600",
     icon: <ShoppingCart className="h-6 w-6" />,
     timeline: "Naan Muthalvan Hackathon, 2024",
