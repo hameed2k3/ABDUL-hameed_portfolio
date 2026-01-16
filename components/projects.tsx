@@ -67,7 +67,7 @@ const projects = [
     image: "/project4.jpg",
     tags: ["Java", "OOP", "Console Application", "Banking"],
     github: "https://github.com/hameed2k3/banking-system",
-    demo: "https://banking-demo.example.com",
+    demo: "https://github.com/hameed2k3/Bankingconsole",
     color: "from-blue-600 to-cyan-500",
     icon: <Banknote className="h-6 w-6" />,
     timeline: "Academic Project, 2023",
