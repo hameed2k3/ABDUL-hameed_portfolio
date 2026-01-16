@@ -93,7 +93,7 @@ const projects = [
     image: "/project6.jpg",
     tags: ["Java", "Swing", "GUI", "Game Development"],
     github: "https://github.com/hameed2k3/tic-tac-toe",
-    demo: "https://tictactoe-demo.example.com",
+    demo: "https://github.com/hameed2k3/Tic-tac-toe",
     color: "from-indigo-600 to-purple-600",
     icon: <Gamepad2 className="h-6 w-6" />,
     timeline: "Personal Project, 2023",
