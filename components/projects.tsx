@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Shield,
   Banknote,
-  Eye,
   ShoppingCart,
   Store,
   Gamepad2,
@@ -73,19 +72,7 @@ const projects = [
     timeline: "Academic Project, 2023",
     category: "Academic",
   },
-  {
-    title: "Keylogger System",
-    description:
-      "Educational keylogger tool developed in Python for security awareness and research purposes. Demonstrates cybersecurity concepts.",
-    image: "/project5.jpg",
-    tags: ["Python", "Security", "Educational", "Cybersecurity"],
-    github: "https://github.com/hameed2k3/keylogger-system",
-    demo: "https://keylogger-demo.example.com",
-    color: "from-red-500 to-orange-500",
-    icon: <Eye className="h-6 w-6" />,
-    timeline: "Personal Project, 2023",
-    category: "Personal",
-  },
+
   {
     title: "Tic Tac Toe Game",
     description:

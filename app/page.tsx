@@ -1,8 +1,8 @@
 import Hero from "@/components/hero"
 import About from "@/components/about"
 import Projects from "@/components/projects"
-import Skills from "@/components/skills"
-import LeetCodeProfile from "@/components/leetcode-profile"
+
+
 import Resume from "@/components/resume"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
@@ -25,8 +25,8 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Skills />
-        <LeetCodeProfile />
+
+
         <Resume />
         <Contact />
         <Footer />
