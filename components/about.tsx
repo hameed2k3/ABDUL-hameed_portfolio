@@ -153,7 +153,7 @@ export default function About() {
               A passionate <span className="font-semibold text-foreground">Backend & Full-Stack Developer</span>{" "}
               currently crafting a travel booking experience as a{" "}
               <span className="text-purple-600 font-semibold">Junior Software Developer at Goeasytrip</span>. I
-              architect robust Next.js and Django solutions, integrate critical APIs, and keep deployments humming on
+              architect robust React and Java Spring Boot solutions, integrate critical APIs (including Amadeus GDS), and keep deployments humming on
               AWS. Previously, I contributed to bespoke WordPress builds during my remote internship with Growth Spell
               Software Solution.
             </motion.p>
@@ -299,10 +299,10 @@ export default function About() {
                 <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
                   <li>
                     Architecting and launching a full-stack travel booking platform from Figma to production using
-                    React, Next.js, and Python Django.
+                    React and Java Spring Boot (Amadeus GDS SOAP APIs).
                   </li>
                   <li>
-                    Building RESTful services that orchestrate bookings, user accounts, Amadeus SDK integrations, and
+                    Building RESTful and SOAP-based services that orchestrate flight search, bookings, PNR/ticketing, and
                     secure payment workflows.
                   </li>
                   <li>

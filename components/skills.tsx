@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const languages = [
   "JavaScript",
   "Java",
-  "Python",
+  "Spring Boot",
   "HTML/CSS",
   "MySQL",
   "PHP",

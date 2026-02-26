@@ -11,14 +11,14 @@ const experiences = [
     company: "Goeasytrip (Remote, Singapore)",
     period: "Aug 2025 - Present",
     description:
-      "Building a full-stack travel booking platform end-to-end with Next.js and Django, integrating Amadeus SDK, secure payment gateways, and AWS deployments.",
+      "Building a full-stack travel booking platform end-to-end with React and Java Spring Boot, integrating Amadeus SDK, secure payment gateways, and AWS deployments.",
     type: "work",
     bullets: [
-      "Translated comprehensive Figma flows into a performant, responsive React/Next.js front end.",
-      "Developed RESTful Django services to manage bookings, traveler accounts, and transactional workflows.",
-      "Integrated third-party travel data (Amadeus SDK) and payment processing for seamless user journeys.",
-      "Automated AWS deployments and monitoring to sustain uptime, scalability, and rapid feature delivery.",
-      "Coordinated with design, product, and QA to launch new experiences with confidence.",
+        "Architected and developed a SOAP-based airline booking engine using Java 21 and Spring Boot, implementing complete flight search, booking, and ticketing workflows.",
+        "Designed and built a robust RESTful backend integrating Amadeus GDS SOAP APIs for flight search, sell, PNR creation, pricing, TST generation, and e-ticket issuance.",
+      "Implemented custom SOAP header interceptors handling WS-Addressing, session lifecycle (Start, InSeries, SignOut), security tokens, and sequence management.",
+      "Developed a cash payment flow prototype for MVP, integrating FP element addition, PNR commit, and secure ticket issuance logic.",
+      "Engineered structured logging, transactional flow control, error handling, and session validation for production-grade API communication.",
     ],
   },
   {
@@ -54,13 +54,6 @@ const certifications = [
     company: "Udemy",
     period: "2023",
     description: "Comprehensive training across modern front-end and back-end tooling.",
-    type: "certification",
-  },
-  {
-    title: "Python Programming",
-    company: "GUVI",
-    period: "2022",
-    description: "Core Python foundations with applied problem solving.",
     type: "certification",
   },
   {
@@ -123,10 +116,11 @@ export default function Resume() {
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transform transition-transform hover:scale-105"
           >
             <a
-              href="https://drive.google.com/file/d/1-0QnEUS80M9Y7y9jYpXFgKicXwT8S9Qj/view?usp=sharing"
+              href="/asset/Abdul_Hameed__Developer_ (1).pdf"
               className="flex items-center"
               target="_blank"
               rel="noopener noreferrer"
+              download
             >
               <Download className="mr-2 h-4 w-4" /> Download Resume
             </a>
@@ -206,13 +200,10 @@ export default function Resume() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                I&apos;m spearheading the engineering build of a full-stack travel booking platform—bridging polished
-                Next.js experiences with a Django-powered core, fused with Amadeus travel intelligence and secure
-                payments. The stack ships through AWS, where I fine-tune scalability and monitoring, all while iterating
-                closely with designers, PMs, and QA for weekly releases.
+              I’m leading the engineering development of a full-stack travel booking platform—connecting seamless React user experiences with a Spring Boot–powered backend integrated with Amadeus GDS (SOAP APIs) for real-time flight search, booking, pricing, and ticket issuance. The system handles secure session management, transactional booking flows, and payment logic (cash prototype).
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Next.js", "React", "Python Django", "REST APIs", "Amadeus SDK", "AWS"].map((tag) => (
+                {[ "React", "Java Spring Boot", "SOAP API", "Amadeus SDK",].map((tag) => (
                   <span
                     key={tag}
                     className="inline-flex items-center rounded-full bg-background/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-purple-600 border border-purple-600/20"
