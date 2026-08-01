@@ -1,17 +1,17 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
-import { Database, Server, Code, Lock, Cpu, GitBranch, MapPin, Calendar, Award, Briefcase } from "lucide-react"
+import { Database, Server, Code, Box, Cpu, GitBranch, MapPin, Calendar, Award, Briefcase } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
 import { Github, Linkedin, Twitter } from "lucide-react"
 
 const skills = [
-  { name: "Full-Stack Development", icon: <Code className="h-8 w-8 text-purple-600" />, level: 90 },
-  { name: "WordPress", icon: <Server className="h-8 w-8 text-green-600" />, level: 85 },
-  { name: "MySQL", icon: <Database className="h-8 w-8 text-blue-600" />, level: 80 },
-  { name: "Security Systems", icon: <Lock className="h-8 w-8 text-red-600" />, level: 85 },
+  { name: "React.js & Next.js", icon: <Code className="h-8 w-8 text-purple-600" />, level: 92 },
+  { name: "Node.js & NestJS", icon: <Server className="h-8 w-8 text-green-600" />, level: 90 },
+  { name: "MongoDB & PostgreSQL", icon: <Database className="h-8 w-8 text-blue-600" />, level: 88 },
+  { name: "3D Web Experiences", icon: <Box className="h-8 w-8 text-red-600" />, level: 86 },
   { name: "Problem Solving", icon: <Cpu className="h-8 w-8 text-orange-400" />, level: 95 },
   { name: "Version Control", icon: <GitBranch className="h-8 w-8 text-gray-600" />, level: 88 },
 ]
@@ -21,10 +21,10 @@ const quickFacts = [
   {
     icon: <Briefcase className="h-5 w-5" />,
     label: "Role",
-    value: "Junior Software Developer",
+    value: "Software Development Engineer",
     color: "text-purple-600",
   },
-  { icon: <Calendar className="h-5 w-5" />, label: "Experience", value: "Less than 1 year", color: "text-green-600" },
+  { icon: <Calendar className="h-5 w-5" />, label: "Experience", value: "1+ Years", color: "text-green-600" },
   { icon: <Award className="h-5 w-5" />, label: "CGPA", value: "8.4/10", color: "text-orange-600" },
 ]
 
@@ -48,7 +48,6 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl"></div>
@@ -68,7 +67,6 @@ export default function About() {
           <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
         </motion.div>
 
-        {/* Hero Profile Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -76,10 +74,8 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="flex flex-col lg:flex-row items-center gap-12 mb-20"
         >
-          {/* Profile Image with Floating Elements */}
           <div className="relative flex-shrink-0">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              {/* Animated Background Rings */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -91,7 +87,6 @@ export default function About() {
                 className="absolute inset-4 rounded-full border-2 border-dashed border-blue-600/30"
               ></motion.div>
 
-              {/* Profile Photo */}
               <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-transparent shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 p-1 rounded-full">
                   <div className="w-full h-full rounded-full overflow-hidden bg-background">
@@ -106,7 +101,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Floating Tech Icons */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
@@ -131,7 +125,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Profile Content */}
           <div className="flex-1 text-center lg:text-left">
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
@@ -150,15 +143,16 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg text-muted-foreground mb-6 leading-relaxed"
             >
-              A passionate <span className="font-semibold text-foreground">Backend & Full-Stack Developer</span>{" "}
-              currently crafting a travel booking experience as a{" "}
-              <span className="text-purple-600 font-semibold">Junior Software Developer at Goeasytrip</span>. I
-              architect robust React and Java Spring Boot solutions, integrate critical APIs (including Amadeus GDS), and keep deployments humming on
-              AWS. Previously, I contributed to bespoke WordPress builds during my remote internship with Growth Spell
-              Software Solution.
+              A passionate <span className="font-semibold text-foreground">Software Development Engineer</span>{" "}
+              currently building production-grade applications at{" "}
+              <span className="text-purple-600 font-semibold">Enarxi Innovation Private Limited</span> since January
+              2026. I work across React.js, Next.js, NestJS, MongoDB, and PostgreSQL, and I specialize in building
+              interactive 3D rendered web-based projects alongside reliable product experiences. Previously, I scaled a
+              travel booking platform at <span className="text-purple-600 font-semibold">Goeasytrip</span> and
+              contributed to WordPress solutions at{" "}
+              <span className="text-purple-600 font-semibold">Growth Spell Software Solution</span>.
             </motion.p>
 
-            {/* Quick Facts Grid */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +174,6 @@ export default function About() {
               ))}
             </motion.div>
 
-            {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +212,6 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Skills Showcase */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -270,7 +262,6 @@ export default function About() {
           </motion.div>
         </motion.div>
 
-        {/* Education & Experience Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +269,6 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          {/* Current Role */}
           <Card className="border-none bg-gradient-to-br from-purple-600/10 to-blue-600/10 backdrop-blur-sm">
             <CardContent className="p-8">
               <div className="flex items-center mb-4">
@@ -292,29 +282,28 @@ export default function About() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <h5 className="font-semibold text-purple-600">Junior Software Developer</h5>
-                  <p className="text-sm text-muted-foreground">Goeasytrip • Remote (Singapore)</p>
-                  <p className="text-sm text-muted-foreground">Aug 2025 - Present</p>
+                  <h5 className="font-semibold text-purple-600">Software Development Engineer</h5>
+                  <p className="text-sm text-muted-foreground">Enarxi Innovation Private Limited - Remote (India)</p>
+                  <p className="text-sm text-muted-foreground">Jan 2026 - Present</p>
                 </div>
                 <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
                   <li>
-                    Architecting and launching a full-stack travel booking platform from Figma to production using
-                    React and Java Spring Boot (Amadeus GDS SOAP APIs).
+                    Building and maintaining production-grade applications across frontend and backend systems for business, monitoring, and workflow products.
                   </li>
                   <li>
-                    Building RESTful and SOAP-based services that orchestrate flight search, bookings, PNR/ticketing, and
-                    secure payment workflows.
+                    Shipping features with React.js, Next.js, NestJS, MongoDB, and PostgreSQL to improve product quality and reliability.
                   </li>
                   <li>
-                    Deploying and tuning the platform on AWS to uphold performance, scalability, and uptime targets.
+                    Delivering specialized 3D rendered web-based experiences that combine strong visuals with solid engineering foundations.
                   </li>
-                  <li>Partnering with product, design, and QA teams to deliver delightful travel experiences.</li>
+                  <li>
+                    Handling release, deployment, debugging, and iteration workflows across cloud-hosted environments with AI-assisted engineering support.
+                  </li>
                 </ul>
               </div>
             </CardContent>
           </Card>
 
-          {/* Education */}
           <Card className="border-none bg-gradient-to-br from-green-500/10 to-emerald-600/10 backdrop-blur-sm">
             <CardContent className="p-8">
               <div className="flex items-center mb-4">
@@ -330,7 +319,7 @@ export default function About() {
                 <div>
                   <h5 className="font-semibold text-green-600">B.Tech in Information Technology</h5>
                   <p className="text-sm text-muted-foreground">Aalim Muhammed Salegh College of Engineering</p>
-                  <p className="text-sm text-muted-foreground">2021 - 2025 • CGPA: 8.4</p>
+                  <p className="text-sm text-muted-foreground">2021 - 2025 - CGPA: 8.4</p>
                 </div>
                 <p className="text-sm leading-relaxed">
                   Specialized in software development, database management, and system design. Active participant in

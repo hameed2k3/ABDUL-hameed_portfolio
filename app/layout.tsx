@@ -14,9 +14,9 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Abdul Hameed - Backend Developer",
+  title: "Abdul Hameed - Software Development Engineer",
   description:
-    "Professional portfolio of Abdul Hameed, a skilled Backend Developer specializing in building robust and scalable server-side applications.",
+    "Professional portfolio of Abdul Hameed, a Software Development Engineer specializing in scalable products, full-stack development, and 3D web-based experiences.",
   generator: "v0.app",
 }
 

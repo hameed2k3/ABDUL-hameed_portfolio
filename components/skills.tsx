@@ -6,15 +6,19 @@ import { Card, CardContent } from "@/components/ui/card"
 
 
 const languages = [
-  "JavaScript",
-  "Java",
-  "Spring Boot",
-  "HTML/CSS",
-  "MySQL",
-  "PHP",
   "React.js",
+  "Next.js",
+  "NestJS",
+  "MongoDB",
+  "PostgreSQL",
   "Node.js",
-  "WordPress",
+  "Three.js / React Three Fiber",
+  "TypeScript",
+  "JavaScript",
+  "Java (Spring Boot)",
+  "Python (Django)",
+  "Git & GitHub",
+  "HTML/CSS",
 ]
 
 export default function Skills() {
@@ -34,7 +38,7 @@ export default function Skills() {
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground">
-            My expertise spans across various full-stack technologies, programming languages, and development tools.
+            My expertise spans modern frontend, backend, databases, and 3D web tooling used to deliver production-ready applications.
           </p>
         </motion.div>
 
@@ -46,7 +50,7 @@ export default function Skills() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-center">Programming Languages</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">Core Stack & Specialization</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center">
               {languages.map((language, index) => (
                 <motion.div

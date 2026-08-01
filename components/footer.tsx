@@ -14,7 +14,7 @@ export default function Footer() {
               Abdul<span className="text-primary">Hameed</span>
             </Link>
             <p className="mt-2 text-muted-foreground">
-              Backend Developer specializing in building robust and scalable server-side applications.
+              Software Development Engineer building scalable products and 3D web-based experiences.
             </p>
           </div>
 

@@ -7,16 +7,30 @@ import { Download, Briefcase, GraduationCap, Award, CheckCircle, Server } from "
 
 const experiences = [
   {
+    title: "Software Development Engineer",
+    company: "Enarxi Innovation Private Limited (Remote, India)",
+    period: "Jan 2026 - Present",
+    description:
+      "Building scalable product experiences, business platforms, and 3D rendered web-based applications across frontend and backend systems.",
+    type: "work",
+    bullets: [
+      "Build and maintain production web applications across frontend and backend systems for business, monitoring, and internal workflow products.",
+      "Work across React.js, Next.js, NestJS, MongoDB, PostgreSQL, and deployment environments to ship features, improve reliability, and support day-to-day product execution.",
+      "Specialize in 3D rendered web-based projects that blend immersive interfaces with production-ready application architecture.",
+      "Use agentic AI coding workflows to speed up implementation, debugging, deployment, and iteration while maintaining code quality and delivery pace.",
+    ],
+  },
+  {
     title: "Junior Software Developer",
     company: "Goeasytrip (Remote, Singapore)",
-    period: "Aug 2025 - Present",
+    period: "Aug 2025 - Apr 2026",
     description:
       "Building a full-stack travel booking platform end-to-end with React and Java Spring Boot, integrating Amadeus SDK, secure payment gateways, and AWS deployments.",
     type: "work",
     bullets: [
-        "Architected and developed a SOAP-based airline booking engine using Java 21 and Spring Boot, implementing complete flight search, booking, and ticketing workflows.",
-        "Designed and built a robust RESTful backend integrating Amadeus GDS SOAP APIs for flight search, sell, PNR creation, pricing, TST generation, and e-ticket issuance.",
-      "Implemented custom SOAP header interceptors handling WS-Addressing, session lifecycle (Start, InSeries, SignOut), security tokens, and sequence management.",
+      "Architected and developed a SOAP-based airline booking engine using Java 21 and Spring Boot, implementing complete flight search, booking, and ticketing workflows.",
+      "Designed and built a robust RESTful backend integrating Amadeus GDS SOAP APIs for flight search, sell, PNR creation, pricing, TST generation, and e-ticket issuance.",
+      "Implemented custom SOAP header interceptors handling WS-Addressing, security tokens, and sequence management.",
       "Developed a cash payment flow prototype for MVP, integrating FP element addition, PNR commit, and secure ticket issuance logic.",
       "Engineered structured logging, transactional flow control, error handling, and session validation for production-grade API communication.",
     ],
@@ -43,7 +57,7 @@ const education = [
     company: "Aalim Muhammed Salegh College of Engineering",
     period: "Sept 2021 - June 2025",
     description:
-      "Anna University, Chennai • CGPA: 8.4 • Coursework spans software engineering, databases, and security.",
+      "Anna University, Chennai - CGPA: 8.4 - Coursework spans software engineering, databases, and security.",
     type: "education",
   },
 ]
@@ -65,7 +79,6 @@ const certifications = [
   },
 ]
 
-// Combine all items for the timeline
 const timelineItems = [...experiences, ...education, ...certifications].sort((a, b) => {
   const parseYear = (period: string) => {
     const yearSegment = period.split(" - ")[0]
@@ -108,8 +121,9 @@ export default function Resume() {
           </h2>
           <div className="h-1 w-20 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground mb-8">
-            I&apos;m early in my professional journey (less than one year of experience) and currently scaling a travel
-            booking platform at Goeasytrip. Here&apos;s how my experience, education, and certifications align.
+            I&apos;m a Software Development Engineer with 1+ years of professional experience, currently building
+            product platforms and 3D web experiences at Enarxi Innovation Private Limited. Here&apos;s how my
+            experience, education, and certifications align.
           </p>
           <Button
             size="lg"
@@ -196,14 +210,16 @@ export default function Resume() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold">Current Focus</h4>
-                  <p className="text-muted-foreground">Full-Stack Delivery at Goeasytrip</p>
+                  <p className="text-muted-foreground">Software Development Engineer at Enarxi Innovation Private Limited</p>
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
-              I’m leading the engineering development of a full-stack travel booking platform—connecting seamless React user experiences with a Spring Boot–powered backend integrated with Amadeus GDS (SOAP APIs) for real-time flight search, booking, pricing, and ticket issuance. The system handles secure session management, transactional booking flows, and payment logic (cash prototype).
+                I&apos;m building and maintaining production web applications across frontend and backend systems,
+                shipping features using React.js, Next.js, NestJS, MongoDB, and PostgreSQL, and specializing in 3D
+                rendered web-based projects that demand both visual quality and engineering reliability.
               </p>
               <div className="flex flex-wrap gap-3">
-                {[ "React", "Java Spring Boot", "SOAP API", "Amadeus SDK",].map((tag) => (
+                {["React.js", "Next.js", "NestJS", "MongoDB", "PostgreSQL", "3D Web"].map((tag) => (
                   <span
                     key={tag}
                     className="inline-flex items-center rounded-full bg-background/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-purple-600 border border-purple-600/20"
@@ -222,18 +238,25 @@ export default function Resume() {
                   <Server className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold">Internship Highlights</h4>
-                  <p className="text-muted-foreground">Growth Spell Software Solution</p>
+                  <h4 className="text-xl font-bold">Travel Engine Delivery</h4>
+                  <p className="text-muted-foreground">Junior Software Developer at Goeasytrip</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  Delivered responsive e-commerce experiences for Dubai-based clients using WordPress, Elementor, and
-                  bespoke JS/CSS.
-                </li>
-                <li>Optimized load times with image compression, caching, and performance audits.</li>
-                <li>Partnered with senior engineers to debug, iterate, and ship features on tight timelines.</li>
-              </ul>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                Designed and developed a SOAP-based airline booking engine using Java 21 and Spring Boot. Integrated
+                Amadeus GDS SOAP APIs for flight searches, selling PNRs, ticket issuance, and engineered robust
+                session validations and transactional security.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Java Spring Boot", "SOAP APIs", "Amadeus GDS", "AWS"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center rounded-full bg-background/80 backdrop-blur-sm px-3 py-1 text-xs font-medium text-green-600 border border-green-600/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </div>
