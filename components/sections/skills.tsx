@@ -1,77 +1,57 @@
 "use client"
 
-import { Braces, Database, GitBranch, Layers3 } from "lucide-react"
 import SectionReveal from "@/components/common/section-reveal"
-import GlowPanel from "@/components/common/glow-panel"
+import { CodeWindow } from "@/components/common/code-window"
 
 const groups = [
-  {
-    icon: Layers3,
-    title: "Frontend",
-    items: ["React.js", "Next.js", "Framer Motion"],
-    text: "UI systems, interaction design, and polished frontend implementation for modern product experiences.",
-  },
-  {
-    icon: Braces,
-    title: "Interactive Presentation",
-    items: ["Framer Motion", "Scroll behavior", "Layered composition"],
-    text: "Motion, pacing, and visual layering used to make websites feel more engaging while staying readable.",
-  },
-  {
-    icon: Database,
-    title: "Backend",
-    items: ["NestJS", "MongoDB", "PostgreSQL"],
-    text: "Practical backend support for product workflows, APIs, and data-backed frontend experiences.",
-  },
-  {
-    icon: GitBranch,
-    title: "Delivery",
-    items: ["Git", "Deployment", "Debugging", "AI-assisted workflows"],
-    text: "Release discipline, iteration, debugging, and dependable implementation across the delivery lifecycle.",
-  },
+  { key: "languages", items: ["Java", "JavaScript", "TypeScript", "Python", "SQL"] },
+  { key: "backend", items: ["Spring Boot", "NestJS", "Node.js", "Express.js", "REST APIs", "SOAP", "JWT", "OAuth 2.0"] },
+  { key: "frontend", items: ["React.js", "Next.js", "Electron", "Framer Motion", "HTML", "CSS", "WordPress"] },
+  { key: "databases", items: ["PostgreSQL", "MongoDB", "SQLite"] },
+  { key: "deployment", items: ["DigitalOcean (VPS)", "Nginx", "PM2", "Certbot (SSL)", "Vercel", "Render", "IONOS"] },
+  { key: "tools", items: ["Git", "GitHub", "Maven", "Postman"] },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-spacing relative">
-      <div className="container px-4 md:px-6">
-        <SectionReveal className="mb-12 max-w-3xl">
-          <span className="glass-tag mb-5">Stack</span>
-          <h2 className="font-[var(--font-display)] text-4xl font-semibold tracking-tight md:text-6xl">
-            The stack behind the <span className="studio-text-gradient">products, interfaces, and delivery work</span>.
+    <section id="skills" className="border-t border-border py-20 md:py-28">
+      <div className="container">
+        <SectionReveal className="mb-12 max-w-2xl">
+          <p className="eyebrow">02 stack</p>
+          <h2 className="section-title mt-3">
+            What I work with<span className="text-primary">.</span>
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-300">
-            This is the stack I use across frontend implementation, backend support, interaction work, and day-to-day
-            delivery.
-          </p>
         </SectionReveal>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {groups.map((group, index) => (
-            <SectionReveal key={group.title} delay={index * 0.06}>
-              <GlowPanel className="h-full p-6 md:p-7">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-cyan-300/30 bg-cyan-400/10 p-3 text-cyan-200 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
-                    <group.icon className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white">{group.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-300">{group.text}</p>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {group.items.map((item) => (
-                        <span key={item} className="glass-pill">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+        <SectionReveal>
+          <CodeWindow title="~/abdul — zsh">
+            <p className="px-5 pt-5 font-mono text-sm text-muted-foreground">
+              <span className="text-primary">$</span> cat stack.json
+            </p>
+            <dl className="mt-2">
+              {groups.map((group) => (
+                <div
+                  key={group.key}
+                  className="grid gap-3 border-b border-border px-5 py-4 last:border-b-0 md:grid-cols-[160px_1fr] md:items-center"
+                >
+                  <dt className="font-mono text-sm text-primary">&quot;{group.key}&quot;</dt>
+                  <dd className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <span key={item} className="chip">
+                        {item}
+                      </span>
+                    ))}
+                  </dd>
                 </div>
-              </GlowPanel>
-            </SectionReveal>
-          ))}
-        </div>
+              ))}
+            </dl>
+            <p className="px-5 pb-5 pt-1 font-mono text-sm text-muted-foreground">
+              <span className="text-primary">$</span>
+              <span className="caret" aria-hidden="true" />
+            </p>
+          </CodeWindow>
+        </SectionReveal>
       </div>
     </section>
   )
 }
-

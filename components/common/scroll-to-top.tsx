@@ -40,7 +40,8 @@ export default function ScrollToTop() {
         >
           <Button
             size="icon"
-            className="rounded-full bg-purple-600 hover:bg-purple-700 shadow-lg w-12 h-12"
+            variant="outline"
+            className="h-11 w-11 border-border bg-background"
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >

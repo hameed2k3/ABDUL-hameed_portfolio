@@ -14,9 +14,13 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1120px",
+        "2xl": "1120px",
       },
     },
     extend: {
@@ -54,11 +58,11 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors based on the request
-        "deep-blue": "#0F172A",
-        "royal-purple": "#6D28D9",
-        "sunset-orange": "#FB923C",
-        gold: "#FFD700",
+      },
+      fontFamily: {
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",

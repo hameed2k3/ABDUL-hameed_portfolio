@@ -1,143 +1,118 @@
 "use client"
 
-import { ArrowUpRight, Briefcase, Download, Sparkles } from "lucide-react"
+import { Download } from "lucide-react"
 import SectionReveal from "@/components/common/section-reveal"
-import GlowPanel from "@/components/common/glow-panel"
 import { Button } from "@/components/ui/button"
 
-const experienceCards = [
+const experience = [
   {
+    hash: "a4f2e91",
+    ref: "HEAD → main",
     company: "Enarxi Innovation Private Limited",
     role: "Software Development Engineer",
-    period: "Jan 2026 - Present",
-    text:
-      "Currently working as a Software Development Engineer since January 2026, building production-grade applications across frontend and backend systems with a focus on product quality, clean implementation, and engaging user experiences.",
+    period: "Jan 2026 - present",
     bullets: [
-      "Build and ship React.js and Next.js interfaces backed by NestJS, MongoDB, and PostgreSQL.",
-      "Contribute to frontend experiences with clearer structure, smoother interaction, and polished visual delivery.",
-      "Support full product workflows by working across UI, API integration, and data-backed functionality.",
+      "Build and maintain web applications with NestJS, PostgreSQL, and React, across both the API and the user interface.",
+      "Design REST endpoints and database tables for new features, and fix bugs raised by teammates and users.",
+      "Deploy releases to DigitalOcean VPS servers and use PM2 to run and restart multiple backend services.",
+      "Configure Nginx as a reverse proxy to route traffic to each service, and set up SSL certificates with Certbot.",
     ],
   },
   {
+    hash: "7c1b0d3",
     company: "Goeasytrip",
+    location: "Remote, Singapore",
     role: "Junior Software Developer",
     period: "Aug 2025 - Dec 2025",
-    text:
-      "Previously contributed to a travel booking platform with Java Spring Boot, SOAP integrations, and backend logic for search, booking, and ticketing flows.",
     bullets: [
-      "Worked with Amadeus GDS SOAP workflows and session-heavy integrations.",
-      "Supported secure and structured travel booking operations.",
-      "Built practical engineering depth across API flows and transactional logic.",
+      "Built Spring Boot REST APIs for user accounts, bookings, and other core flows of a travel booking platform.",
+      "Integrated Amadeus SOAP APIs for flight search, pricing, and availability, handling the XML request and response flow.",
+      "Tested APIs in Postman, reproduced reported bugs, and shipped fixes with regression checks.",
+      "Deployed the application on IONOS, set up domain routing and environment configs, and handled routine maintenance.",
     ],
   },
   {
+    hash: "1e9d4a8",
     company: "Growth Spell Software Solution",
+    location: "Remote, Dubai, UAE",
     role: "Web Development Intern",
     period: "Apr 2025 - Jun 2025",
-    text:
-      "Delivered WordPress and content-driven frontend work for international retail and brand showcase use cases.",
     bullets: [
-      "Built marketing-led pages with responsive execution.",
-      "Extended design systems with custom CSS and JavaScript behaviors.",
-      "Learned fast shipping, stakeholder alignment, and production polish.",
+      "Customized and maintained WordPress sites with themes, plugins, and Elementor.",
+      "Fixed layout, plugin, and speed issues with JavaScript and CSS updates.",
     ],
   },
 ]
 
 export default function Resume() {
   return (
-    <section id="resume" className="section-spacing relative">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
-          <SectionReveal>
-            <span className="glass-tag mb-5">Experience</span>
-            <h2 className="font-[var(--font-display)] text-4xl font-semibold tracking-tight md:text-6xl">
-              Experience shaped by <span className="studio-text-gradient">product work, engineering depth, and steady growth</span>.
+    <section id="resume" className="border-t border-border py-20 md:py-28">
+      <div className="container">
+        <SectionReveal className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow">05 experience</p>
+            <h2 className="section-title mt-3">
+              Where I&apos;ve worked<span className="text-primary">.</span>
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
-              My experience so far has helped me grow across frontend delivery, backend integration, and building
-              products that feel more thoughtful and complete for real users.
-            </p>
-
-            <GlowPanel className="mt-8 p-6">
-              <div className="flex items-start gap-4">
-                <div className="rounded-2xl border border-cyan-300/30 bg-cyan-400/10 p-3 text-cyan-200 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
-                  <Sparkles className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white">Current focus</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">
-                    Building product systems at Enarxi with React.js, Next.js, NestJS, MongoDB, and PostgreSQL while
-                    strengthening my frontend presentation and interaction skills.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {["React.js", "Next.js", "NestJS", "MongoDB", "PostgreSQL", "Framer Motion"].map((item) => (
-                      <span key={item} className="glass-pill text-[11px]">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </GlowPanel>
-
-            <Button asChild className="glass-button-secondary mt-6">
-              <a href="/asset/Abdul_Hameed__Developer_ (1).pdf" target="_blank" rel="noopener noreferrer" download>
-                Download Resume <Download className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </SectionReveal>
-
-          <div className="space-y-5">
-            {experienceCards.map((card, index) => (
-              <SectionReveal key={card.company} delay={index * 0.08}>
-                <GlowPanel className="p-6 md:p-7">
-                  <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/5 text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
-                        <Briefcase className="h-5 w-5" />
-                      </div>
-                      <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white">{card.role}</h3>
-                      <p className="mt-1 font-medium text-cyan-300">{card.company}</p>
-                    </div>
-                    <div className="flex flex-col items-start gap-2 md:items-end">
-                      {index === 0 ? (
-                        <span className="glass-tag border-emerald-400/30 bg-emerald-400/10 text-emerald-200 shadow-[0_0_15px_rgba(52,211,153,0.2)] text-[10px]">
-                          Current Role
-                        </span>
-                      ) : null}
-                      <span className="glass-pill text-xs">
-                        {card.period}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="mt-5 text-sm leading-7 text-slate-300">{card.text}</p>
-                  <div className="mt-5 grid gap-3 md:grid-cols-3">
-                    {card.bullets.map((bullet) => (
-                      <div key={bullet} className="glass-card p-4 text-xs font-medium leading-6 text-slate-200">
-                        {bullet}
-                      </div>
-                    ))}
-                  </div>
-                </GlowPanel>
-              </SectionReveal>
-            ))}
-
-            <SectionReveal delay={0.26}>
-              <a
-                href="https://www.linkedin.com/in/abdul-hameed-abdul-lathif-567064250/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-pill border-cyan-300/40 px-5 py-3 text-cyan-200 hover:border-cyan-300/60 hover:text-white"
-              >
-                View full experience on LinkedIn <ArrowUpRight className="h-4 w-4" />
-              </a>
-            </SectionReveal>
           </div>
-        </div>
+          <Button asChild variant="outline" className="border-foreground font-mono text-sm">
+            <a href="/asset/Abdul-Hameed-Resume.pdf" download="Abdul-Hameed-Resume.pdf">
+              <Download /> resume.pdf
+            </a>
+          </Button>
+        </SectionReveal>
+
+        <p className="mb-6 font-mono text-sm text-muted-foreground">
+          <span className="text-primary">$</span> git log --career
+        </p>
+
+        <ol className="max-w-3xl">
+          {experience.map((job, index) => {
+            const isCurrent = index === 0
+            const isLast = index === experience.length - 1
+            return (
+              <li key={job.hash} className="relative grid grid-cols-[1.5rem_1fr] gap-4">
+                <div aria-hidden="true" className="relative">
+                  {!isLast && <span className="absolute bottom-[-1.5rem] left-[0.4rem] top-5 w-px bg-border" />}
+                  <span
+                    className={`absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full border-2 ${
+                      isCurrent ? "border-primary bg-primary" : "border-border bg-background"
+                    }`}
+                  />
+                </div>
+                <SectionReveal delay={index * 0.06}>
+                  <article
+                    className={`mb-6 rounded-lg border bg-card p-5 ${isCurrent ? "border-primary" : "border-border"}`}
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[11px]">
+                      <span className="text-muted-foreground">
+                        commit {job.hash}
+                        {job.ref && <span className="text-primary"> ({job.ref})</span>}
+                      </span>
+                      <span className="text-muted-foreground">{job.period}</span>
+                    </div>
+                    <h3 className="mt-3 text-xl font-semibold">{job.role}</h3>
+                    <p className={isCurrent ? "text-primary" : "text-muted-foreground"}>
+                      {job.company}
+                      {job.location && <span className="text-muted-foreground"> &middot; {job.location}</span>}
+                    </p>
+                    <ul className="mt-4 space-y-2">
+                      {job.bullets.map((bullet) => (
+                        <li key={bullet} className="relative pl-5 text-sm text-muted-foreground">
+                          <span aria-hidden="true" className="absolute left-0 font-mono text-primary">
+                            +
+                          </span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </SectionReveal>
+              </li>
+            )
+          })}
+        </ol>
       </div>
     </section>
   )
 }
-

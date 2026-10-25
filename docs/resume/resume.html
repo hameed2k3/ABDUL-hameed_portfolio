@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abdul Hameed Abdul Lathif - Resume</title>
+<style>
+  @page { size: A4; margin: 8mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 8.8pt; line-height: 1.28; color: #1a1916; margin: 0; }
+  a { color: #1a1916; text-decoration: none; }
+  a.l { color: #1a1916; text-decoration: underline; text-underline-offset: 1.5pt; }
+  h1 { font-size: 20pt; margin: 0; letter-spacing: 0.4pt; text-align: center; }
+  .title { text-align: center; font-size: 10.5pt; color: #1a1916; margin-top: 2pt; font-weight: bold; }
+  .contact { text-align: center; margin-top: 3pt; font-size: 8.8pt; }
+  .contact span + span::before { content: "  |  "; color: #8a857a; }
+  h2 { font-size: 10pt; text-transform: uppercase; margin: 6pt 0 2.5pt; padding-bottom: 1.5pt; border-bottom: 1px solid #1a1916; }
+  p { margin: 0 0 2pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .role { font-weight: bold; }
+  .when { white-space: nowrap; }
+  .org { font-style: italic; margin-bottom: 1.5pt; }
+  .block { margin-bottom: 3.5pt; break-inside: avoid; }
+  ul { margin: 1pt 0 0; padding-left: 12pt; }
+  li { margin-bottom: 1pt; }
+  .skills p { margin-bottom: 1.2pt; }
+  .skills b { display: inline-block; min-width: 92pt; }
+  .sub { color: #5b574d; font-size: 8.6pt; margin-bottom: 1pt; }
+</style>
+</head>
+<body>
+
+<h1>ABDUL HAMEED ABDUL LATHIF</h1>
+<div class="title">Software Development Engineer (Backend / Full-Stack)</div>
+<div class="contact">
+  <span>Chennai, India</span><span>+91 9361679436</span><span><a href="mailto:abdulhameedabdulathif@gmail.com">abdulhameedabdulathif@gmail.com</a></span><span><a class="l" href="https://github.com/hameed2k3">github.com/hameed2k3</a></span><span><a class="l" href="https://www.linkedin.com/in/adhameed2k3/">linkedin.com/in/adhameed2k3</a></span><span><a class="l" href="https://abdul-hameed-portfolio.vercel.app">abdul-hameed-portfolio.vercel.app</a></span>
+</div>
+
+<h2>Summary</h2>
+<p>Backend-leaning full-stack developer with over a year of experience in Spring Boot, NestJS, and React. Builds REST APIs and PostgreSQL schemas, integrates Amadeus SOAP flight services, and deploys services to DigitalOcean with PM2, Nginx, and Certbot. Published a research paper on an AI-integrated voting system (IJRPR).</p>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>Languages:</b> Java, JavaScript, TypeScript, Python, SQL</p>
+  <p><b>Backend:</b> Spring Boot, NestJS, Node.js, Express.js, REST APIs, SOAP, XML, JWT, OAuth 2.0</p>
+  <p><b>Frontend:</b> React, Next.js, HTML, CSS</p>
+  <p><b>Databases:</b> PostgreSQL, MongoDB, SQLite</p>
+  <p><b>Deployment &amp; Servers:</b> DigitalOcean (VPS), Nginx, PM2, Certbot (SSL), Vercel, Render, IONOS</p>
+  <p><b>Tools:</b> Git, GitHub, Maven, Postman</p>
+</div>
+
+<h2>Professional Experience</h2>
+
+<div class="block">
+  <div class="row"><span class="role">Software Development Engineer</span><span class="when">Jan 2026 - Present</span></div>
+  <div class="org">Enarxi Innovation Private Limited</div>
+  <ul>
+    <li>Build and maintain web applications with NestJS, PostgreSQL, and React, working on both the API and the user interface.</li>
+    <li>Design REST endpoints and database tables for new features, and fix bugs raised by teammates and users.</li>
+    <li>Deploy releases to DigitalOcean VPS servers and use PM2 to run and restart multiple backend services.</li>
+    <li>Configure Nginx as a reverse proxy to route traffic to each service, and set up SSL certificates with Certbot.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <div class="row"><span class="role">Junior Software Developer</span><span class="when">Aug 2025 - Dec 2025</span></div>
+  <div class="org">Goeasytrip (Remote, Singapore)</div>
+  <ul>
+    <li>Built Spring Boot REST APIs for user accounts, bookings, and other core flows of a travel booking platform.</li>
+    <li>Integrated Amadeus SOAP APIs for flight search, pricing, and availability, and handled the XML request and response flow.</li>
+    <li>Tested APIs in Postman, reproduced reported bugs, and shipped fixes with regression checks.</li>
+    <li>Deployed the application on IONOS, set up domain routing and environment configs, and handled routine maintenance.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <div class="row"><span class="role">Web Development Intern</span><span class="when">Apr 2025 - Jun 2025</span></div>
+  <div class="org">Growth Spell Software Solution (Remote, Dubai, UAE)</div>
+  <ul>
+    <li>Maintained WordPress sites with themes, plugins, and Elementor, and fixed layout, plugin, and speed issues with JavaScript and CSS.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+
+<div class="block">
+  <div class="row"><span class="role">BillingPro: GST Billing and Inventory Desktop App</span><span class="when">Electron, React, TypeScript, SQLite</span></div>
+  <ul>
+    <li>Built a GST-compliant billing app for Indian retail with per-line GST (CGST and SGST, or IGST), discounts, invoice numbering, and barcode or SKU search.</li>
+    <li>Linked billing to inventory: every sale deducts stock and writes a stock log, and the dashboard shows stock value and low-stock alerts.</li>
+    <li>Added admin and biller roles with bcrypt-hashed passwords, monthly sales and GST reports with PDF export, and fixed a month-end date bug in the report queries.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <div class="row"><span class="role">Multi-Vendor Grocery Marketplace</span><span class="when"><a class="l" href="https://github.com/hameed2k3/Grocery">GitHub</a> | <a class="l" href="https://grocery-web-naanmuthalvan.vercel.app/">Live Demo</a></span></div>
+  <div class="sub">React, Node.js, Express.js, MongoDB, JWT, Google OAuth 2.0, Vercel, Render</div>
+  <ul>
+    <li>Built a marketplace where several stores sell on one platform, each with its own catalog, stock, and orders in a vendor dashboard.</li>
+    <li>Added Google OAuth 2.0 and JWT login with separate access for customers, vendors, and admins.</li>
+    <li>Wrote a bulk Excel/CSV upload that updates stock and price by SKU with ownership checks and row-level errors, plus ZIP image upload matched to inventory by SKU file name.</li>
+    <li>Captured delivery location at checkout using browser geolocation and OpenStreetMap address lookup.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <div class="row"><span class="role">AI-Integrated Online Voting System</span><span class="when"><a class="l" href="https://votingsystemonline.vercel.app/">Live Demo</a> | <a class="l" href="https://ijrpr.com/uploads/V6ISSUE5/IJRPR45652.pdf">Research Paper</a></span></div>
+  <div class="sub">AI, Blockchain, Facial Recognition, OTP Verification | Apr 2025</div>
+  <ul>
+    <li>Built a remote voting platform that checks each voter with face recognition, OTP, and voter ID before a vote can be cast.</li>
+    <li>Stored votes on a blockchain so results cannot be quietly changed, and published the work in the International Journal of Research Publication and Review (IJRPR).</li>
+  </ul>
+</div>
+
+<h2>Education</h2>
+<div class="row"><span><span class="role">Anna University, Chennai</span> - B.Tech in Information Technology | CGPA: 8.4</span><span class="when">Sept 2021 - June 2025</span></div>
+
+<h2>Certifications and Achievements</h2>
+<p>Python (GUVI) | Cybersecurity Fundamentals (IBM) | Beginner Ethical Hacking (Skill Up) | First place, Paper Presentation, SIT-SCIHUM-22</p>
+
+</body>
+</html>

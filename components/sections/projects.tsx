@@ -1,230 +1,140 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { ArrowUpRight, Boxes, Cuboid, ExternalLink, Layers3, Sparkles } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import SectionReveal from "@/components/common/section-reveal"
-import GlowPanel from "@/components/common/glow-panel"
-import TiltCard from "@/components/common/tilt-card"
+import { CornerFrame } from "@/components/common/code-window"
+import { InvoicePreview } from "@/components/common/invoice-preview"
 
-const featuredProject = {
-  title: "AI Integrated Online Voting System",
-  subtitle: "A secure digital voting concept built around trusted participation and product clarity",
+const featured = {
+  title: "BillingPro: GST billing and inventory software",
   description:
-    "This project is the strongest fit for a featured case study because it combines security-heavy thinking, multi-step verification, and a clear user-facing product flow.",
-  visual: "/project-featured-cover.png",
-  tags: ["React.js", "Security", "OTP", "Blockchain"],
-  role: "End-to-end product build",
-  challenge:
-    "Create a voting experience that feels easy to use while still communicating trust, identity verification, and secure participation.",
-  solution:
-    "The product combines facial recognition, OTP verification, and blockchain-backed logic to build confidence into the user journey without making the interface feel too technical.",
-  outcome:
-    "A stronger proof-of-skill project that shows product thinking, frontend structure, and the ability to work on security-oriented workflows.",
+    "A desktop app for Indian retail that handles the billing counter and the stock room together. Every bill calculates GST, deducts stock, and logs the movement, so the numbers always agree.",
+  tags: ["Electron", "React", "TypeScript", "SQLite"],
+  href: "/project/billingpro",
+  host: "BillingPro - new bill",
 }
 
 const projects = [
   {
+    path: "voting-system/",
     title: "AI Integrated Online Voting System",
-    description:
-      "Secure voting system with facial recognition, OTP verification, and blockchain integration for trusted digital participation.",
+    description: "Face recognition, OTP, and voter ID checks with votes stored on a blockchain. Published as a research paper in IJRPR.",
     image: "/project-voting-cover.png",
     tags: ["React.js", "Security", "Blockchain"],
-    demo: "https://votingsystemonline.vercel.app/",
-    category: "Security",
-    role: "Full product concept",
+    href: "https://votingsystemonline.vercel.app/",
+    label: "live demo",
   },
   {
-    title: "Chettinadu Supermarket Website",
-    description:
-      "Marketing-led product showcase website built to communicate store identity, promotions, and curated catalog storytelling.",
-    image: "/project-supermarket-cover.png",
-    tags: ["WordPress", "Showcase", "Responsive"],
-    demo: "/project/chettinadu-supermarket",
-    category: "Brand Experience",
-    role: "Marketing website",
-  },
-  {
-    title: "Grocery Web Application",
-    description:
-      "Responsive MERN grocery application with authentication, cart flows, and product browsing created for hackathon delivery.",
+    path: "grocery-marketplace/",
+    title: "Multi-Vendor Grocery Marketplace",
+    description: "Several stores sell on one platform, each with its own catalog, stock, and orders. Google OAuth and JWT login with separate access for customers, vendors, and admins.",
     image: "/project-grocery-cover.png",
-    tags: ["MongoDB", "React.js", "MERN"],
-    demo: "https://grocery-web-naanmuthalvan.vercel.app/",
-    category: "Product Build",
-    role: "Responsive web app",
+    tags: ["React.js", "Node.js", "MongoDB", "OAuth 2.0"],
+    href: "https://grocery-web-naanmuthalvan.vercel.app/",
+    label: "live demo",
   },
   {
-    title: "Simple Banking System",
-    description:
-      "Console-based banking application focused on OOP principles, account operations, and structured Java logic.",
-    image: "/project-banking-cover.png",
-    tags: ["Java", "OOP", "Console"],
-    demo: "https://github.com/hameed2k3/Bankingconsole",
-    category: "Core Engineering",
-    role: "Core logic project",
+    path: "chettinadu-site/",
+    title: "Chettinadu Supermarket",
+    description: "A marketing website for a supermarket brand, covering promotions and a curated catalogue. Built during my internship.",
+    image: "/project-supermarket-cover.png",
+    tags: ["WordPress", "Elementor"],
+    href: "/project/chettinadu-supermarket",
+    label: "case study",
   },
-]
-
-const projectPillars = [
-  { icon: Cuboid, title: "Clear visual presentation" },
-  { icon: Layers3, title: "Practical product delivery" },
-  { icon: Boxes, title: "Strong systems thinking" },
+  {
+    path: "Bankingconsole/",
+    title: "Simple Banking System",
+    description: "A console banking application in Java, focused on OOP principles, account operations, and structured logic.",
+    image: "/project-banking-cover.png",
+    tags: ["Java", "OOP"],
+    href: "https://github.com/hameed2k3/Bankingconsole",
+    label: "view source",
+  },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="section-spacing relative">
-      <div className="container px-4 md:px-6">
-        <SectionReveal className="mb-12 max-w-3xl">
-          <span className="glass-tag mb-5">Selected work</span>
-          <h2 className="font-[var(--font-display)] text-4xl font-semibold tracking-tight md:text-6xl">
-            Work that shows how I approach <span className="studio-text-gradient">engineering, product flow, and presentation</span>.
+    <section id="projects" className="border-t border-border py-20 md:py-28">
+      <div className="container">
+        <SectionReveal className="mb-12 max-w-2xl">
+          <p className="eyebrow">01 selected work</p>
+          <h2 className="section-title mt-3">
+            Things I&apos;ve built<span className="text-primary">.</span>
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-300">
-            These projects reflect the kind of work I enjoy most: building useful applications, solving practical
-            problems, and making the final user experience feel more complete.
-          </p>
+          <p className="mt-4 text-muted-foreground">Production-minded apps, hackathon builds, and client work.</p>
         </SectionReveal>
 
         <SectionReveal>
-          <GlowPanel className="mb-10 overflow-hidden p-6 md:p-8">
-            <div className="grid gap-8 lg:grid-cols-[1.12fr_0.88fr]">
-              <div className="glass-card relative overflow-hidden rounded-[1.75rem]">
-                <Image
-                  src={featuredProject.visual}
-                  alt={featuredProject.title}
-                  width={1200}
-                  height={800}
-                  className="h-full min-h-[22rem] w-full object-cover opacity-60 transition-all duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(5,10,18,0.45),rgba(5,10,18,0.92)),radial-gradient(circle_at_30%_20%,rgba(103,232,249,0.22),transparent_35%)]" />
-                <div className="absolute inset-0 flex items-end p-6">
-                  <div>
-                    <span className="glass-tag text-[10px]">
-                      Featured project
-                    </span>
-                    <h3 className="mt-4 font-[var(--font-display)] text-3xl font-semibold text-white">
-                      {featuredProject.title}
-                    </h3>
-                    <p className="mt-2 max-w-lg text-sm leading-7 text-slate-200">{featuredProject.subtitle}</p>
-                  </div>
+          <Link href={featured.href} className="group block">
+            <CornerFrame className="grid gap-6 p-4 md:grid-cols-[1.15fr_0.85fr] md:gap-8 md:p-5">
+              <div className="overflow-hidden rounded-md border border-border bg-card">
+                <div className="border-b border-border px-3 py-2 font-mono text-[11px] text-muted-foreground">
+                  {featured.host}
                 </div>
+                <InvoicePreview />
               </div>
-
-              <div className="flex flex-col justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">Case study overview</p>
-                  <p className="mt-3 text-base leading-8 text-slate-300">{featuredProject.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {featuredProject.tags.map((tag) => (
-                      <span key={tag} className="glass-pill">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-4">
-                  <div className="glass-card grid gap-3 p-5 text-sm text-slate-100">
-                    <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Role</span>
-                      <p className="mt-1 font-medium text-white">{featuredProject.role}</p>
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Challenge</span>
-                      <p className="mt-1 text-slate-200">{featuredProject.challenge}</p>
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Approach</span>
-                      <p className="mt-1 text-slate-200">{featuredProject.solution}</p>
-                    </div>
-                    <div>
-                      <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-300">Why it matters</span>
-                      <p className="mt-1 text-slate-200">{featuredProject.outcome}</p>
-                    </div>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {projectPillars.map((pillar) => (
-                      <div key={pillar.title} className="glass-card p-4 text-xs font-medium text-slate-200">
-                        <pillar.icon className="mb-2.5 h-5 w-5 text-cyan-300" />
-                        {pillar.title}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="flex flex-col justify-center">
+                <p className="font-mono text-xs text-primary">★ featured · desktop app</p>
+                <h3 className="mt-2 text-2xl font-semibold leading-tight md:text-3xl">{featured.title}</h3>
+                <p className="mt-3 text-muted-foreground">{featured.description}</p>
+                <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
+                  {featured.tags.map((tag) => (
+                    <li key={tag} className="tech-tag">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-5 inline-flex items-center gap-1 font-mono text-sm text-primary group-hover:underline">
+                  read case study <ArrowUpRight className="h-4 w-4" />
+                </span>
               </div>
-            </div>
-          </GlowPanel>
-        </SectionReveal>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
-            <SectionReveal key={project.title} delay={index * 0.08}>
-              <TiltCard className="h-full">
-                <GlowPanel className="group h-full overflow-hidden p-4">
-                  <div className="relative overflow-hidden rounded-[1.4rem] border border-white/15">
-                    <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,transparent,rgba(2,6,23,0.92))]" />
-                    <motion.div
-                      className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.3),transparent_35%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={900}
-                      height={600}
-                      className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute left-4 top-4 z-20">
-                      <span className="glass-tag text-[10px]">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4 z-20">
-                      <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white">{project.title}</h3>
-                      <p className="mt-1 text-sm text-cyan-200">{project.role}</p>
-                    </div>
-                  </div>
-
-                  <div className="p-3">
-                    <p className="text-sm leading-7 text-slate-300">{project.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="glass-pill text-[11px]">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="mt-6 flex items-center justify-between">
-                      <span className="inline-flex items-center gap-2 text-sm text-slate-400">
-                        <Sparkles className="h-4 w-4 text-orange-400" />
-                        Product proof
-                      </span>
-                      <Button asChild className="glass-button-secondary py-2 text-xs">
-                        <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                          View Project <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </GlowPanel>
-              </TiltCard>
-            </SectionReveal>
-          ))}
-        </div>
-
-        <SectionReveal className="mt-10 text-center">
-          <Link
-            href="#contact"
-            className="glass-pill px-6 py-3.5 text-sm text-slate-200 hover:text-white"
-          >
-            Need a developer who cares about clean product delivery and frontend quality? <ArrowUpRight className="h-4 w-4" />
+            </CornerFrame>
           </Link>
         </SectionReveal>
+
+        <ul className="mt-6 grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => {
+            const external = project.href.startsWith("http")
+            return (
+              <li key={project.title}>
+                <SectionReveal delay={index * 0.06} className="h-full">
+                  <Link
+                    href={project.href}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary"
+                  >
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      width={600}
+                      height={400}
+                      className="aspect-[3/2] w-full border-b border-border object-cover"
+                    />
+                    <div className="flex flex-1 flex-col p-5">
+                      <p className="font-mono text-[11px] text-muted-foreground">{project.path}</p>
+                      <h3 className="mt-1 text-lg font-semibold">{project.title}</h3>
+                      <p className="mt-2 flex-1 text-sm text-muted-foreground">{project.description}</p>
+                      <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1">
+                        {project.tags.map((tag) => (
+                          <li key={tag} className="tech-tag">
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
+                      <span className="mt-4 inline-flex items-center gap-1 font-mono text-xs text-primary group-hover:underline">
+                        {project.label} <ArrowUpRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </Link>
+                </SectionReveal>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )
 }
-

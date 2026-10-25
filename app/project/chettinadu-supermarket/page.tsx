@@ -1,11 +1,7 @@
-"use client"
-
+import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, CheckCircle2, Globe, LayoutGrid, Megaphone, Palette } from "lucide-react"
-import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { CornerFrame } from "@/components/common/code-window"
+import Footer from "@/components/sections/footer"
 
 const highlights = [
   "Curated product catalogue pages built for retail storytelling rather than checkout complexity.",
@@ -13,148 +9,86 @@ const highlights = [
   "Responsive layouts designed for store promotions, category highlights, and brand positioning.",
 ]
 
-const deliverables = [
-  "WordPress",
-  "Elementor Pro",
-  "Custom CSS",
-  "Responsive Layouts",
-  "Content Strategy",
-  "SEO Foundations",
+const deliverables = ["WordPress", "Elementor Pro", "Custom CSS", "Responsive layouts", "Content strategy", "SEO foundations"]
+
+const meta = [
+  { key: "client", value: "Dubai-based supermarket" },
+  { key: "role", value: "Web development intern" },
+  { key: "type", value: "Marketing website" },
 ]
 
 export default function ChettinaduSupermarketProject() {
   return (
-    <div className="min-h-screen bg-background pt-28 text-foreground">
-      <div className="container px-4 md:px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-10"
-        >
-          <Button variant="outline" asChild className="rounded-full bg-transparent">
-            <Link href="/#projects">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Projects
-            </Link>
-          </Button>
-        </motion.div>
+    <>
+      <main className="min-h-screen py-14 md:py-20">
+        <div className="container max-w-3xl">
+          <Link href="/#projects" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            &larr; cd ../projects
+          </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-4xl text-center"
-        >
-          <Badge className="rounded-full border border-orange-300/20 bg-orange-300/10 px-4 py-1 text-orange-200">
-            Marketing Showcase
-          </Badge>
-          <h1 className="mt-5 font-[var(--font-display)] text-4xl font-semibold md:text-6xl">
-            Chettinadu Supermarket
+          <p className="eyebrow mt-10">marketing showcase</p>
+          <h1 className="mt-3 text-4xl font-semibold leading-tight md:text-6xl">
+            Chettinadu Supermarket<span className="text-primary">.</span>
           </h1>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          <p className="mt-5 text-lg text-muted-foreground">
             A product display website created during my internship to present a supermarket brand through curated
             category storytelling, promotional sections, and flexible marketing content.
           </p>
-        </motion.div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
-            <Card className="studio-frame overflow-hidden border-white/10 bg-slate-950/70">
-              <div className="relative h-72 bg-[linear-gradient(135deg,rgba(22,101,52,0.9),rgba(16,185,129,0.65)),radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_28%)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-3 rounded-[1.75rem] border border-white/15 bg-white/10 p-6 backdrop-blur-sm">
-                    {[1, 2, 3, 4].map((tile) => (
-                      <div key={tile} className="h-16 w-16 rounded-2xl border border-white/20 bg-white/10" />
-                    ))}
-                  </div>
-                </div>
+          <dl className="mt-10 grid border-y border-border sm:grid-cols-3">
+            {meta.map((item, index) => (
+              <div key={item.key} className={`py-4 sm:px-4 ${index === 0 ? "sm:pl-0" : "sm:border-l sm:border-border"}`}>
+                <dt className="font-mono text-[11px] uppercase text-muted-foreground">{item.key}</dt>
+                <dd className="mt-1 text-sm font-medium">{item.value}</dd>
               </div>
-              <CardContent className="p-6">
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <Palette className="mb-3 h-5 w-5 text-orange-200" />
-                    <h2 className="font-[var(--font-display)] text-xl font-semibold">Brand-led design</h2>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      Built to support merchandising, brand tone, and category storytelling rather than direct ecommerce.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <Globe className="mb-3 h-5 w-5 text-cyan-200" />
-                    <h2 className="font-[var(--font-display)] text-xl font-semibold">Responsive delivery</h2>
-                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                      Structured for desktop and mobile browsing with campaign-ready sections and easy content updates.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+            ))}
+          </dl>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.16 }}
-            className="space-y-6"
-          >
-            <Card className="studio-panel border-white/10 bg-white/5">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Megaphone className="h-5 w-5 text-orange-200" />
-                  Purpose and Scope
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm leading-7 text-muted-foreground">
-                This project focused on presenting in-store offerings, promotions, and brand identity through a clear
-                showcase experience for a Dubai-based supermarket client.
-              </CardContent>
-            </Card>
+          <CornerFrame className="mt-10">
+            <Image
+              src="/project-supermarket-cover.png"
+              alt="Chettinadu Supermarket website preview"
+              width={1200}
+              height={800}
+              className="aspect-[3/2] w-full rounded object-cover"
+            />
+          </CornerFrame>
 
-            <Card className="studio-panel border-white/10 bg-white/5">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <LayoutGrid className="h-5 w-5 text-cyan-200" />
-                  Highlights
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {highlights.map((item) => (
-                  <div key={item} className="flex gap-3 text-sm leading-7 text-muted-foreground">
-                    <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-emerald-300" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </motion.div>
+          <section className="mt-12">
+            <h2 className="text-2xl font-semibold">Purpose and scope</h2>
+            <p className="mt-3 text-muted-foreground">
+              The project focused on presenting in-store offerings, promotions, and brand identity through a clear
+              showcase experience, built to support merchandising and brand tone rather than direct ecommerce.
+            </p>
+          </section>
+
+          <section className="mt-12">
+            <h2 className="text-2xl font-semibold">Highlights</h2>
+            <ul className="mt-4 space-y-3">
+              {highlights.map((item) => (
+                <li key={item} className="relative pl-5 text-muted-foreground">
+                  <span aria-hidden="true" className="absolute left-0 font-mono text-primary">
+                    +
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="mt-12">
+            <h2 className="text-2xl font-semibold">Toolkit</h2>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {deliverables.map((item) => (
+                <li key={item} className="chip">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.22 }}
-          className="mt-10"
-        >
-          <Card className="studio-panel border-white/10 bg-white/5">
-            <CardHeader>
-              <CardTitle>Toolkit and Deliverables</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-3">
-                {deliverables.map((item) => (
-                  <Badge key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">
-                    {item}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
-    </div>
+      </main>
+      <Footer />
+    </>
   )
 }
